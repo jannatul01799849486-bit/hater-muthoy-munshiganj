@@ -1,869 +1,318 @@
-/* Reset */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:Arial, sans-serif;
-    background:#f5f7fa;
-    color:#333;
-}
-
-/* Header */
-header{
-    background:linear-gradient(135deg,#0f766e,#16a34a);
-    color:white;
-    padding:20px 40px;
-}
-
-.logo h1{
-    font-size:32px;
-}
-
-.logo p{
-    margin-top:8px;
-}
-
-/* Navigation */
-nav{
-    margin-top:20px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-right:20px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#ffe082;
-}
-
-/* Hero */
-.hero{
-    text-align:center;
-    padding:80px 20px;
-    background:white;
-}
-
-.hero h2{
-    font-size:40px;
-    color:#0f766e;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:18px;
-    max-width:700px;
-    margin:0 auto 30px;
-    line-height:1.6;
-}
-
-.hero input{
-    width:70%;
-    max-width:500px;
-    padding:15px;
-    border:2px solid #16a34a;
-    border-radius:10px;
-    font-size:16px;
-}
-
-.hero button{
-    margin-top:20px;
-    padding:15px 35px;
-    border:none;
-    border-radius:10px;
-    background:#16a34a;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.hero button:hover{
-    background:#0f766e;
-    transform:scale(1.05);
-}
-
-/* Footer */
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:50px;
-}.services{
-    padding:60px 20px;
-}
-
-.services h2{
-    text-align:center;
-    color:#0f766e;
-    margin-bottom:40px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#16a34a;
-    margin-bottom:15px;
-}
-
-.card p{
-    margin-bottom:20px;
-}
-
-.card a{
-    text-decoration:none;
-    color:white;
-    background:#16a34a;
-    padding:10px 18px;
-    border-radius:8px;
-}/* News Section */
-
-.news{
-    padding:70px 20px;
-    background:#eef7f4;
-}
-
-.news h2{
-    text-align:center;
-    color:#0f766e;
-    margin-bottom:35px;
-}
-
-.news-box{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.news-card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.news-card h3{
-    color:#0f766e;
-    margin-bottom:15px;
-}
-
-.news-card p{
-    line-height:1.6;
-    margin-bottom:20px;
-}
-
-.news-card a{
-    background:#16a34a;
-    color:white;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:8px;
-}/* Emergency Section */
-
-.emergency{
-    padding:60px 20px;
-}
-
-.emergency h2{
-    text-align:center;
-    color:#0f766e;
-    margin-bottom:30px;
-}
-
-.emergency-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.emergency-card{
-    background:#ffffff;
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.emergency-card h3{
-    margin-bottom:10px;
-    color:#16a34a;
-}
-
-.emergency-card p{
-    font-size:22px;
-    font-weight:bold;
-}/* District */
-
-.district-info{
-
-padding:70px 20px;
-
-background:#ffffff;
-
-}
-
-.district-info h2{
-
-text-align:center;
-
-margin-bottom:40px;
-
-color:#0f766e;
-
-}
-
-.district-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:30px;
-
-}
-
-.map-box,.upazila-box{
-
-background:white;
-
-padding:25px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-}
-
-.map-box img{
-
-width:100%;
-
-border-radius:10px;
-
-}
-
-.upazila-box ul{
-
-padding-left:20px;
-
-line-height:2;
-
-}
-
-/* Tourist */
-
-.tourist{
-
-padding:70px 20px;
-
-background:#eef7f4;
-
-}
-
-.tourist h2{
-
-text-align:center;
-
-margin-bottom:35px;
-
-color:#0f766e;
-
-}<section class="district-overview">
-
-<h2>🏛️ মুন্সিগঞ্জ জেলা পরিচিতি</h2>
-
-<div class="overview-grid">
-
-<div class="info-card">
-<h3>⭐ জেলার ইতিহাস</h3>
-
-<p>
-মুন্সিগঞ্জের প্রাচীন নাম বিক্রমপুর।
-এটি বাংলা ইতিহাসের অন্যতম গুরুত্বপূর্ণ অঞ্চল।
-অতীশ দীপঙ্কর, জগদীশচন্দ্র বসুসহ বহু গুণী ব্যক্তির জন্মস্থান।
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>👥 জনসংখ্যা</h3>
-
-<p>
-মোট জনসংখ্যা (আনুমানিক)
-১৭ লক্ষ+
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>📊 উপজেলা</h3>
-
-<ul>
-
-<li>মুন্সিগঞ্জ সদর</li>
-
-<li>টঙ্গীবাড়ী</li>
-
-<li>গজারিয়া</li>
-
-<li>লৌহজং</li>
-
-<li>শ্রীনগর</li>
-
-<li>সিরাজদিখান</li>
-
-</ul>
-
-</div>
-
-<div class="info-card">
-
-<h3>🏘️ পৌরসভা</h3>
-
-<ul>
-
-<li>মুন্সিগঞ্জ পৌরসভা</li>
-
-<li>শ্রীনগর পৌরসভা</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="map-section">
-
-<h2>📍 মুন্সিগঞ্জ জেলার অবস্থান</h2>
-
-<iframe
-src="https://www.google.com/maps?q=Munshiganj,Bangladesh&output=embed"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</section>/*=========================
-Health Section
-=========================*/
-
-.health{
-
-padding:70px 20px;
-
-background:#ffffff;
-
-}
-
-.health h2{
-
-text-align:center;
-
-font-size:35px;
-
-color:#0f766e;
-
-margin-bottom:40px;
-
-}
-
-.health-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-gap:25px;
-
-}
-
-.health-card{
-
-background:#fff;
-
-padding:25px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-transition:.3s;
-
-}
-
-.health-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.health-card h3{
-
-color:#16a34a;
-
-margin-bottom:15px;
-
-}
-
-.health-card p{
-
-margin:10px 0;
-
-line-height:1.6;
-
-}
-
-.health-card a,
-.health-card button{
-
-display:inline-block;
-
-margin-top:15px;
-
-background:#16a34a;
-
-color:white;
-
-padding:10px 18px;
-
-text-decoration:none;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-}/*=========================
-Education
-=========================*/
-
-.education,
-.religion,
-.business{
-
-padding:70px 20px;
-
-background:#f8fafc;
-
-}
-
-.education h2,
-.religion h2,
-.business h2{
-
-text-align:center;
-
-font-size:34px;
-
-color:#0f766e;
-
-margin-bottom:40px;
-
-}
-
-.education-grid,
-.religion-grid,
-.business-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:25px;
-
-}
-
-.education-card,
-.religion-card,
-.business-card{
-
-background:white;
-
-padding:25px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.education-card:hover,
-.religion-card:hover,
-.business-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.education-card h3,
-.religion-card h3,
-.business-card h3{
-
-color:#16a34a;
-
-margin-bottom:15px;
-
-}/*=========================
-Tourism
-=========================*/
-
-.tourism,
-.gallery,
-.contact-box{
-
-padding:70px 20px;
-
-}
-
-.tourism h2,
-.gallery h2,
-.contact-box h2{
-
-text-align:center;
-
-margin-bottom:35px;
-
-color:#0f766e;
-
-}
-
-.tourism-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:25px;
-
-}
-
-.tour-card{
-
-background:white;
-
-padding:25px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-}
-
-.tour-card a{
-
-display:inline-block;
-
-margin-top:15px;
-
-padding:10px 20px;
-
-background:#16a34a;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:8px;
-
-}
-
-.gallery-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-}
-
-.gallery-grid img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-border-radius:12px;
-
-}
-
-.contact-box{
-
-text-align:center;
-
-background:#eef7f4;
-
-}
-
-footer{
-
-background:#0f172a;
-
-color:white;
-
-padding:50px 20px;
-
-}
-
-.footer-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-}
-
-.footer-grid ul{
-
-list-style:none;
-
-padding:0;
-
-}
-
-.footer-grid a{
-
-color:white;
-
-text-decoration:none;
-
-}
-
-.copyright{
-
-text-align:center;
-
-margin-top:40px;
-
-border-top:1px solid #444;
-
-padding-top:20px;
-
-}/* Hero Slider */
-
-.hero-slider{
-
-position:relative;
-
-height:450px;
-
-overflow:hidden;
-
-}
-
-.slide{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-display:none;
-
-}
-
-.slide.active{
-
-display:block;
-
-}
-
-.slide img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-.caption{
-
-position:absolute;
-
-bottom:60px;
-
-left:60px;
-
-background:rgba(0,0,0,.5);
-
-padding:20px;
-
-border-radius:10px;
-
-color:white;
-
-}
-
-.top-tools{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:20px;
-
-background:#fff;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-}
-
-.top-tools input{
-
-padding:12px;
-
-width:300px;
-
-border-radius:8px;
-
-border:1px solid #ccc;
-
-}
-
-#darkMode{
-
-padding:12px 20px;
-
-background:#16a34a;
-
-color:white;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-}
-
-.notice{
-
-background:#fff8dc;
-
-padding:20px;
-
-}
-
-.notice h2{
-
-margin-bottom:15px;
-
-color:#d97706;
-
-}
-
-.dark{
-
-background:#111;
-
-color:white;
-
-}
-
-.dark section{
-
-background:#222;
-
-}
-
-.dark .card,
-
-.dark .health-card,
-
-.dark .business-card,
-
-.dark .education-card,
-
-.dark .tour-card{
-
-background:#333;
-
-color:white;
-
-}.login-box{
-
-width:400px;
-
-margin:80px auto;
-
-padding:30px;
-
-background:white;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-}
-
-.login-box input{
-
-width:100%;
-
-padding:15px;
-
-margin:10px 0;
-
-}
-
-.login-box button{
-
-width:100%;
-
-padding:15px;
-
-background:#16a34a;
-
-color:white;
-
-border:none;
-
-border-radius:8px;
-
-}. {munshiganj-map.png
+/* --- Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #006a4e; /* Deep green representation of Bangladesh */
+    --secondary-color: #f42a41; /* Red contrast */
+    --dark-bg: #111827;
+    --light-bg: #f9fafb;
+    --card-light: #ffffff;
+    --card-dark: #1f2937;
+    --text-main: #374151;
+    --text-muted: #6b7280;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Dark Mode Variables Overwrite --- */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: #f3f4f6;
+}
+body.dark-mode .main-header { background: #1f2937; }
+body.dark-mode .service-card, 
+body.dark-mode .emergency-card,
+body.dark-mode .news-card,
+body.dark-mode .content-box,
+body.dark-mode .sidebar-box,
+body.dark-mode .place-card,
+body.dark-mode .info-block,
+body.dark-mode .utility-card,
+body.dark-mode .trans-card {
+    background-color: var(--card-dark);
+    color: #f3f4f6;
+    border: 1px solid #374151;
+}
+body.dark-mode .text-muted { color: #9ca3af; }
+
+/* --- Top Bar & Header --- */
+.top-bar {
+    background: #004d38;
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-toggle {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.logo h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+.logo p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.main-nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+.main-nav a:hover, .main-nav a.active {
+    background: var(--primary-color);
+    color: white !important;
+}
+
+/* --- Notice Board --- */
+.notice-section {
+    background: #fffbeb;
+    border-bottom: 1px solid #fde68a;
+    padding: 10px 0;
+}
+.notice-flex {
+    display: flex;
+    align-items: center;
+}
+.notice-title {
+    background: var(--secondary-color);
+    color: white;
+    padding: 2px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-right: 15px;
+}
+
+/* --- Hero Slider & Search --- */
+.hero-slider {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    background: #111;
+}
+.slide {
+    position: absolute;
     width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.slide.active { opacity: 1; }
+.slide-content {
+    text-align: center;
+    color: white;
+}
+.slide-content h2 { font-size: 38px; margin-bottom: 10px; }
+
+.hero-search-container {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+.search-wrap {
+    display: flex;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    overflow: hidden;
+}
+.search-wrap input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+}
+.search-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+/* --- Layout Grid Mechanics --- */
+.section-padding { padding: 40px 0; }
+.section-title { text-align: center; margin-bottom: 30px; font-size: 26px; position: relative; }
+.section-title::after {
+    content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 8px auto 0; border-radius: 2px;
+}
+.section-title-left { margin-bottom: 20px; font-size: 24px; color: var(--primary-color); }
+
+.grid { display: grid; gap: 20px; }
+.grid-6 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
+.grid-2-1 { grid-template-columns: 2fr 1fr; }
+
+@media(max-width: 768px) {
+    .grid-2-1 { grid-template-columns: 1fr; }
+    .header-flex { flex-direction: column; text-align: center; gap: 15px; }
+    .main-nav a { margin: 0 5px; font-size: 14px; }
+}
+
+/* --- Cards Styling --- */
+.text-center { text-align: center; }
+.service-card {
+    background: var(--card-light);
+    padding: 25px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.icon-wrap {
+    width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto 15px; font-size: 24px; color: white;
+}
+.color-1 { background: #3b82f6; } .color-2 { background: #10b981; } .color-3 { background: #ef4444; }
+.color-4 { background: #8b5cf6; } .color-5 { background: #f59e0b; } .color-6 { background: #06b6d4; }
+
+/* Emergency */
+.emergency-card {
+    background: #fff5f5;
+    border: 1px solid #fee2e2;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.e-icon { font-size: 30px; color: var(--secondary-color); margin-bottom: 10px; }
+.phone-number { font-size: 24px; font-weight: bold; color: #b91c1c; display: block; margin-top: 5px; }
+
+/* News */
+.news-card {
+    background: var(--card-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+}
+.news-badge {
+    position: absolute; top: 15px; right: 15px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; font-size: 12px; border-radius: 4px; font-weight: bold;
+}
+.news-card h3 { font-size: 18px; margin-bottom: 10px; padding-right: 50px; }
+.news-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 15px; }
+.read-more { color: var(--primary-color); font-weight: bold; font-size: 14px; }
+
+/* Places */
+.place-card {
+    background: var(--card-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.place-img { height: 160px; background-size: cover; background-position: center; background-color: #ddd; }
+.place-info { padding: 15px; }
+.place-info h3 { font-size: 16px; margin-bottom: 5px; }
+.place-info p { font-size: 13px; color: var(--text-muted); }
+
+/* Block & Lists Layout */
+.content-box, .sidebar-box, .info-block {
+    background: var(--card-light); padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.stats-box { margin: 20px 0; }
+.stat-card { background: #f3f4f6; padding: 15px; border-radius: 6px; text-align: center; }
+body.dark-mode .stat-card { background: #374151; }
+.upazila-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.upazila-list li { font-weight: 500; }
+.upazila-list i { color: var(--primary-color); margin-right: 5px; }
+
+.block-title { font-size: 20px; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
+.list-item { margin-bottom: 15px; }
+.list-item h4 { font-size: 16px; color: var(--primary-color); }
+.list-item p { font-size: 14px; color: var(--text-muted); }
+
+.action-buttons-flex { display: flex; gap: 10px; margin-top: 15px; }
+.btn-sm { padding: 6px 15px; border: none; border-radius: 4px; color: white; cursor: pointer; font-family: inherit; font-size: 14px; }
+.btn-outline { background: transparent; border: 1px solid var(--text-muted); color: inherit; }
+
+/* Utilities */
+.utility-card, .trans-card {
+    background: var(--card-light); padding: 20px; border-radius: 8px; text-align: center;
+}
+.trans-card i { font-size: 32px; color: var(--primary-color); margin-bottom: 10px; }
+
+/* Gallery */
+.gallery-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;
+}
+.gallery-item { height: 180px; overflow: hidden; border-radius: 8px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* --- Footer --- */
+.main-footer {
+    background: #0f172a; color: #94a3b8; padding: 50px 0 20px; margin-top: 5px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 30px; }
+@media(max-width:768px){ .footer-grid { grid-template-columns: 1fr; } }
+.footer-about h3, .footer-links h3, .footer-socials h3 { color: white; margin-bottom: 15px; font-size: 18px; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 8px; }
+.footer-links ul li a:hover { color: white; }
+.social-icons a {
+    display: inline-block; width: 35px; height: 35px; background: #1e293b; color: white; line-height: 35px; text-align: center; border-radius: 50%; margin-right: 10px; transition: var(--transition);
+}
+.social-icons a:hover { background: var(--primary-color); }
+.footer-bottom { border-top: 1px solid #1e293b; padding-top: 20px; text-align: center; font-size: 14px; }
+   
