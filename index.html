@@ -1,317 +1,369 @@
-/* --- Base Reset & Typography --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হাতের মুঠোয় মুন্সিগঞ্জ - জেলার সব তথ্য এক জায়গায়</title>
+    <!-- Google Fonts for better Bengali typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind_Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-:root {
-    --primary-color: #006a4e; /* Deep green representation of Bangladesh */
-    --secondary-color: #f42a41; /* Red contrast */
-    --dark-bg: #111827;
-    --light-bg: #f9fafb;
-    --card-light: #ffffff;
-    --card-dark: #1f2937;
-    --text-main: #374151;
-    --text-muted: #6b7280;
-    --transition: all 0.3s ease;
-}
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div id="clock" class="clock-box"></div>
+            <div class="top-actions">
+                <button id="darkModeBtn" class="btn-toggle"><i class="fas fa-moon"></i> ডার্ক মোড</button>
+            </div>
+        </div>
+    </div>
 
-body {
-    font-family: 'Hind Siliguri', sans-serif;
-    background-color: var(--light-bg);
-    color: var(--text-main);
-    line-height: 1.6;
-}
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <h1><i class="fas fa-landmark"></i> হাতের মুঠোয় মুন্সিগঞ্জ</h1>
+                <p>মুন্সিগঞ্জ জেলার সব তথ্য, এক জায়গায়</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">হোম</a>
+                <a href="news.html">সংবাদ</a>
+                <a href="jobs.html">চাকরি</a>
+                <a href="rent.html">বাড়ি ভাড়া</a>
+                <a href="hospitals.html">হাসপাতাল</a>
+                <a href="offices.html">সরকারি অফিস</a>
+                <a href="contact.html">যোগাযোগ</a>
+            </nav>
+        </div>
+    </header>
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    <!-- Notice Board -->
+    <section class="notice-section">
+        <div class="container notice-flex">
+            <span class="notice-title"><i class="fas fa-bullhorn"></i> নোটিশ:</span>
+            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                স্বাগতম "হাতের মুঠোয় মুন্সিগঞ্জ"-এ | নতুন চাকরির বিজ্ঞপ্তি প্রকাশিত হয়েছে | নতুন হাসপাতাল যুক্ত হয়েছে | ইদ্রাকপুর দুর্গে পর্যটকদের জন্য নতুন গাইড গ্যালারি চালু করা হয়েছে।
+            </marquee>
+        </div>
+    </section>
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/munshiganj-map.png');">
+            <div class="slide-content">
+                <h2>হাতের মুঠোয় মুন্সিগঞ্জ</h2>
+                <p>জেলার সব তথ্য এখন এক জায়গায়</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/photo1.jpg');">
+            <div class="slide-content">
+                <h2>পর্যটন ও ঐতিহ্য</h2>
+                <p>মুন্সিগঞ্জের ঐতিহাসিক দর্শনীয় স্থান ঘুরে দেখুন</p>
+            </div>
+        </div>
+        <!-- Hero Search Integration -->
+        <div class="hero-search-container">
+            <div class="search-wrap">
+                <input type="text" id="mainSearch" placeholder="আপনি কী খুঁজছেন? (যেমন: হাসপাতাল, চাকরি, রিসোর্ট)...">
+                <button class="search-btn"><i class="fas fa-search"></i> খুঁজুন</button>
+            </div>
+        </div>
+    </section>
 
-/* --- Dark Mode Variables Overwrite --- */
-body.dark-mode {
-    background-color: var(--dark-bg);
-    color: #f3f4f6;
-}
-body.dark-mode .main-header { background: #1f2937; }
-body.dark-mode .service-card, 
-body.dark-mode .emergency-card,
-body.dark-mode .news-card,
-body.dark-mode .content-box,
-body.dark-mode .sidebar-box,
-body.dark-mode .place-card,
-body.dark-mode .info-block,
-body.dark-mode .utility-card,
-body.dark-mode .trans-card {
-    background-color: var(--card-dark);
-    color: #f3f4f6;
-    border: 1px solid #374151;
-}
-body.dark-mode .text-muted { color: #9ca3af; }
+    <main class="container">
+        
+        <!-- Quick Services Grid -->
+        <section class="section-padding">
+            <h2 class="section-title">✨ জনপ্রিয় সেবা সমূহ</h2>
+            <div class="grid grid-6">
+                <a href="jobs.html" class="service-card text-center">
+                    <div class="icon-wrap color-1"><i class="fas fa-briefcase"></i></div>
+                    <h3>চাকরি</h3>
+                    <p>সর্বশেষ চাকরির খবর</p>
+                </a>
+                <a href="rent.html" class="service-card text-center">
+                    <div class="icon-wrap color-2"><i class="fas fa-home"></i></div>
+                    <h3>বাড়ি ভাড়া</h3>
+                    <p>বাসা ও অফিস ভাড়া</p>
+                </a>
+                <a href="hospitals.html" class="service-card text-center">
+                    <div class="icon-wrap color-3"><i class="fas fa-hospital"></i></div>
+                    <h3>হাসপাতাল</h3>
+                    <p>জরুরি চিকিৎসা ও ডাক্তার</p>
+                </a>
+                <a href="offices.html" class="service-card text-center">
+                    <div class="icon-wrap color-4"><i class="fas fa-building"></i></div>
+                    <h3>সরকারি অফিস</h3>
+                    <p>কার্যালয় ও নাগরিক সেবা</p>
+                </a>
+                <a href="news.html" class="service-card text-center">
+                    <div class="icon-wrap color-5"><i class="fas fa-newspaper"></i></div>
+                    <h3>সর্বশেষ সংবাদ</h3>
+                    <p>স্থানীয় টাটকা খবর</p>
+                </a>
+                <a href="contact.html" class="service-card text-center">
+                    <div class="icon-wrap color-6"><i class="fas fa-phone-alt"></i></div>
+                    <h3>যোগাযোগ</h3>
+                    <p>প্রয়োজনীয় হেল্পলাইন</p>
+                </a>
+            </div>
+        </section>
 
-/* --- Top Bar & Header --- */
-.top-bar {
-    background: #004d38;
-    color: white;
-    padding: 8px 0;
-    font-size: 14px;
-}
-.top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.btn-toggle {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: inherit;
-}
+        <!-- Emergency Contacts -->
+        <section class="section-padding emergency-section">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> জরুরি হেল্পলাইন নম্বর</h2>
+            <div class="grid grid-4">
+                <div class="emergency-card">
+                    <div class="e-icon"><i class="fas fa-ambulance"></i></div>
+                    <h3>অ্যাম্বুলেন্স সেবা</h3>
+                    <span class="phone-number">৯৯৯</span>
+                </div>
+                <div class="emergency-card">
+                    <div class="e-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>পুলিশ কন্ট্রোল রুম</h3>
+                    <span class="phone-number">৯৯৯</span>
+                </div>
+                <div class="emergency-card">
+                    <div class="e-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                    <h3>ফায়ার সার্ভিস</h3>
+                    <span class="phone-number">১৬১৬৩</span>
+                </div>
+                <div class="emergency-card">
+                    <div class="e-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>বিদ্যুৎ অভিযোগ</h3>
+                    <span class="phone-number">স্থানীয় পল্লী বিদ্যুৎ</span>
+                </div>
+            </div>
+        </section>
 
-.main-header {
-    background: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-.header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-.logo h1 {
-    font-size: 24px;
-    color: var(--primary-color);
-}
-.logo p {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-.main-nav a {
-    margin-left: 20px;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: var(--transition);
-}
-.main-nav a:hover, .main-nav a.active {
-    background: var(--primary-color);
-    color: white !important;
-}
+        <!-- Latest News & Updates -->
+        <section class="section-padding">
+            <h2 class="section-title">📰 সর্বশেষ আপডেট ও খবর</h2>
+            <div class="grid grid-3">
+                <div class="news-card">
+                    <div class="news-badge">ভ্রমণ</div>
+                    <h3>পদ্মা সেতু এলাকায় নতুন পর্যটন উদ্যোগ</h3>
+                    <p>মুন্সিগঞ্জে পর্যটন শিল্পের ব্যাপক উন্নয়নে নতুন মেগা পরিকল্পনা গ্রহণ করা হয়েছে।</p>
+                    <a href="padma-setu.html" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-card">
+                    <div class="news-badge">প্রশাসন</div>
+                    <h3>জেলা প্রশাসনের নতুন সেবা উইন্ডো</h3>
+                    <p>জনসাধারণের দ্রুত ও ভোগান্তিহীন সেবা নিশ্চিত করতে নতুন ডিজিটাল পোর্টাল চালুর সিদ্ধান্ত।</p>
+                    <a href="news.html" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-card">
+                    <div class="news-badge">ক্যারিয়ার</div>
+                    <h3>স্থানীয় প্রতিষ্ঠানে বড় নিয়োগ বিজ্ঞপ্তি</h3>
+                    <p>মুন্সিগঞ্জ বিসিক শিল্প নগরীর বিভিন্ন স্বনামধন্য প্রতিষ্ঠানে একাধিক পদে নিয়োগ চলছে।</p>
+                    <a href="jobs.html" class="read-more">বিজ্ঞপ্তি দেখুন <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
 
-/* --- Notice Board --- */
-.notice-section {
-    background: #fffbeb;
-    border-bottom: 1px solid #fde68a;
-    padding: 10px 0;
-}
-.notice-flex {
-    display: flex;
-    align-items: center;
-}
-.notice-title {
-    background: var(--secondary-color);
-    color: white;
-    padding: 2px 10px;
-    font-weight: bold;
-    border-radius: 4px;
-    white-space: nowrap;
-    margin-right: 15px;
-}
+        <!-- District Info & Map Grid -->
+        <section class="section-padding">
+            <div class="grid grid-2-1">
+                <!-- Overview -->
+                <div class="content-box">
+                    <h2 class="section-title-left"><i class="fas fa-map-marked-alt"></i> মুন্সিগঞ্জ জেলা পরিচিতি</h2>
+                    <p>মুন্সিগঞ্জের প্রাচীন ও ঐতিহাসিক নাম <strong>বিক্রমপুর</strong>। এটি প্রাচীন বাংলার জ্ঞান-বিজ্ঞান ও সংস্কৃতির রাজধানী ছিল। অতীশ দীপঙ্কর শ্রীজ্ঞান, বিজ্ঞানী স্যার জগদীশচন্দ্র বসু, এবং দেশবন্ধু চিত্তরঞ্জন দাসের মতো যুগান্তকারী মণীষীদের পুণ্যভূমি এই মুন্সিগঞ্জ জেলা।</p>
+                    
+                    <div class="grid grid-2 stats-box">
+                        <div class="stat-card">
+                            <h4><i class="fas fa-users"></i> মোট জনসংখ্যা</h4>
+                            <p>১৭ লক্ষ + (আনুমানিক)</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4><i class="fas fa-city"></i> পৌরসভা</h4>
+                            <p>২টি (মুন্সিগঞ্জ ও মিরকাদিম)</p>
+                        </div>
+                    </div>
 
-/* --- Hero Slider & Search --- */
-.hero-slider {
-    position: relative;
-    height: 380px;
-    overflow: hidden;
-    background: #111;
-}
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slide.active { opacity: 1; }
-.slide-content {
-    text-align: center;
-    color: white;
-}
-.slide-content h2 { font-size: 38px; margin-bottom: 10px; }
+                    <h3 class="sub-title">📌 উপজেলার তালিকা</h3>
+                    <ul class="upazila-list">
+                        <li><i class="fas fa-check-circle"></i> মুন্সিগঞ্জ সদর</li>
+                        <li><i class="fas fa-check-circle"></i> শ্রীনগর</li>
+                        <li><i class="fas fa-check-circle"></i> সিরাজদিখান</li>
+                        <li><i class="fas fa-check-circle"></i> লৌহজং</li>
+                        <li><i class="fas fa-check-circle"></i> গজারিয়া</li>
+                        <li><i class="fas fa-check-circle"></i> টঙ্গীবাড়ী</li>
+                    </ul>
+                </div>
+                <!-- Map and Interactive Element -->
+                <div class="sidebar-box">
+                    <h3>📍 ভৌগোলিক অবস্থান</h3>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps?q=Munshiganj,Bangladesh&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-.hero-search-container {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-}
-.search-wrap {
-    display: flex;
-    width: 600px;
-    max-width: 90%;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
-    overflow: hidden;
-}
-.search-wrap input {
-    flex: 1;
-    padding: 15px 25px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    font-family: inherit;
-}
-.search-btn {
-    background: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 0 25px;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: inherit;
-}
+        <!-- Tourist Spots -->
+        <section class="section-padding">
+            <h2 class="section-title">🏞️ দর্শনীয় ও ঐতিহাসিক স্থানসমূহ</h2>
+            <div class="grid grid-4">
+                <div class="place-card">
+                    <div class="place-img" style="background-image: url('images/resort.jpg');"></div>
+                    <div class="place-info">
+                        <h3>পদ্মা রিসোর্ট</h3>
+                        <p>নদীর বুকে ভাসমান কুটির ও অপরূপ প্রাকৃতিক দৃশ্য।</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img" style="background-image: url('images/fort.jpg');"></div>
+                    <div class="place-info">
+                        <h3>ইদ্রাকপুর দুর্গ</h3>
+                        <p>১৬৬০ সালে নির্মিত ঐতিহাসিক মুঘল জলদুর্গ।</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img" style="background-image: url('images/house.jpg');"></div>
+                    <div class="place-info">
+                        <h3>স্যার জগদীশ চন্দ্র বসুর বাড়ি</h3>
+                        <p>রাঢ়ীখালের বিজ্ঞানীর স্মৃতিবিজড়িত ঐতিহাসিক স্থান।</p>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img" style="background-image: url('images/ghat.jpg');"></div>
+                    <div class="place-info">
+                        <h3>মাওয়া ফেরি ঘাট</h3>
+                        <p>পদ্মা সেতু দর্শন ও বিখ্যাত ইলিশের স্বাদ নেওয়ার কেন্দ্র।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-/* --- Layout Grid Mechanics --- */
-.section-padding { padding: 40px 0; }
-.section-title { text-align: center; margin-bottom: 30px; font-size: 26px; position: relative; }
-.section-title::after {
-    content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 8px auto 0; border-radius: 2px;
-}
-.section-title-left { margin-bottom: 20px; font-size: 24px; color: var(--primary-color); }
+        <!-- Medical & Education Grid Component -->
+        <section class="section-padding">
+            <div class="grid grid-2">
+                <!-- Health Box -->
+                <div class="info-block">
+                    <h2 class="block-title"><i class="fas fa-heartbeat"></i> স্বাস্থ্যসেবা ও হাসপাতাল</h2>
+                    <div class="list-item">
+                        <h4>মুন্সিগঞ্জ জেনারেল হাসপাতাল</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> মুন্সিগঞ্জ সদর | <i class="fas fa-phone"></i> ০২-XXXXXXX</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>উপজেলা স্বাস্থ্য কমপ্লেক্সসমূহ</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> শ্রীনগর, টঙ্গীবাড়ী, গজারিয়া, লৌহজং, সিরাজদিখান</p>
+                    </div>
+                    <div class="action-buttons-flex">
+                        <button class="btn-sm color-3"><i class="fas fa-tint"></i> রক্তদাতার তালিকা</button>
+                        <button class="btn-sm btn-outline">সব ফার্মেসি দেখুন</button>
+                    </div>
+                </div>
+                <!-- Education Box -->
+                <div class="info-block">
+                    <h2 class="block-title"><i class="fas fa-graduation-cap"></i> প্রখ্যাত শিক্ষা প্রতিষ্ঠান</h2>
+                    <div class="list-item">
+                        <h4>সরকারি হরগঙ্গা কলেজ</h4>
+                        <p>মুন্সিগঞ্জ জেলার শীর্ষস্থানীয় উচ্চশিক্ষা প্রতিষ্ঠান।</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>মুন্সিগঞ্জ সরকারি বালক উচ্চ বিদ্যালয়</h4>
+                        <p>ঐতিহ্যবাহী এবং অন্যতম প্রাচীন মাধ্যমিক বিদ্যালয়।</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>বিনোদপুর রামকুমার উচ্চ বিদ্যালয়</h4>
+                        <p>সিরাজদিখান উপজেলার স্বনামধন্য শিক্ষা বিদ্যাপীঠ।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-.grid { display: grid; gap: 20px; }
-.grid-6 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
-.grid-2-1 { grid-template-columns: 2fr 1fr; }
+        <!-- Business & Banks -->
+        <section class="section-padding">
+            <h2 class="section-title">🏦 ব্যাংক ও ব্যবসা প্রতিষ্ঠান</h2>
+            <div class="grid grid-3">
+                <div class="utility-card">
+                    <h3><i class="fas fa-university"></i> বাণিজ্যিক ব্যাংকিং</h3>
+                    <p>সোনালী, অগ্রণী, জনতা এবং ইসলামী ব্যাংকসহ সকল রাষ্ট্রায়ত্ত ও বেসরকারি ব্যাংকের শাখার তথ্য।</p>
+                </div>
+                <div class="utility-card">
+                    <h3><i class="fas fa-credit-card"></i> এটিএম (ATM) বুথ</h3>
+                    <p>শহরের গুরুত্বপূর্ণ পয়েন্টে ২৪ ঘণ্টা সচল এটিএম বুথের অবস্থান ও ম্যাপ লিঙ্ক।</p>
+                </div>
+                <div class="utility-card">
+                    <h3><i class="fas fa-shopping-bag"></i> স্থানীয় ব্যবসা ও শপিং</h3>
+                    <p>প্রধান বিপণী বিতান, ঐতিহ্যবাহী কাপড়ের হাট ও পাইকারি বাজারের সময়সূচী।</p>
+                </div>
+            </div>
+        </section>
 
-@media(max-width: 768px) {
-    .grid-2-1 { grid-template-columns: 1fr; }
-    .header-flex { flex-direction: column; text-align: center; gap: 15px; }
-    .main-nav a { margin: 0 5px; font-size: 14px; }
-}
+        <!-- Transport & Services -->
+        <section class="section-padding">
+            <h2 class="section-title">🚍 যাতায়াত ও ভ্রমণ সেবা</h2>
+            <div class="grid grid-3">
+                <div class="trans-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>বাস কাউন্টার ও রুট</h3>
+                    <p>ঢাকা-মুন্সিগঞ্জ রুটের দিঘীরপাড় পরিবহন, গঙ্গারূপা ও মাওয়া রুটের বাসের সময়সূচী।</p>
+                </div>
+                <div class="trans-card">
+                    <i class="fas fa-ship"></i>
+                    <h3>লঞ্চ ও সি-বোট ঘাট</h3>
+                    <p>লৌহজং, মাওয়া ও মুক্তারপুর সংলগ্ন লঞ্চ ও ওয়াটার ট্রান্সপোর্টের চার্ট।</p>
+                </div>
+                <div class="trans-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>রেস্টুরেন্ট ও কফি শপ</h3>
+                    <p>মাওয়ার ঐতিহ্যবাহী ইলিশের হোটেল ও শহরের রুফটপ ক্যাফের তালিকা।</p>
+                </div>
+            </div>
+        </section>
 
-/* --- Cards Styling --- */
-.text-center { text-align: center; }
-.service-card {
-    background: var(--card-light);
-    padding: 25px 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    transition: var(--transition);
-}
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-.icon-wrap {
-    width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto 15px; font-size: 24px; color: white;
-}
-.color-1 { background: #3b82f6; } .color-2 { background: #10b981; } .color-3 { background: #ef4444; }
-.color-4 { background: #8b5cf6; } .color-5 { background: #f59e0b; } .color-6 { background: #06b6d4; }
+        <!-- Image Gallery Section -->
+        <section class="section-padding">
+            <h2 class="section-title">📸 মুন্সিগঞ্জ ফটো গ্যালারি</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="images/photo1.jpg" alt="Munshiganj Image 1"></div>
+                <div class="gallery-item"><img src="images/photo2.jpg" alt="Munshiganj Image 2"></div>
+                <div class="gallery-item"><img src="images/photo3.jpg" alt="Munshiganj Image 3"></div>
+                <div class="gallery-item"><img src="images/photo4.jpg" alt="Munshiganj Image 4"></div>
+            </div>
+        </section>
 
-/* Emergency */
-.emergency-card {
-    background: #fff5f5;
-    border: 1px solid #fee2e2;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-.e-icon { font-size: 30px; color: var(--secondary-color); margin-bottom: 10px; }
-.phone-number { font-size: 24px; font-weight: bold; color: #b91c1c; display: block; margin-top: 5px; }
+    </main>
 
-/* News */
-.news-card {
-    background: var(--card-light);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: relative;
-}
-.news-badge {
-    position: absolute; top: 15px; right: 15px; background: #e0f2fe; color: #0369a1; padding: 2px 8px; font-size: 12px; border-radius: 4px; font-weight: bold;
-}
-.news-card h3 { font-size: 18px; margin-bottom: 10px; padding-right: 50px; }
-.news-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 15px; }
-.read-more { color: var(--primary-color); font-weight: bold; font-size: 14px; }
+    <!-- Footer Area -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>হাতের মুঠোয় মুন্সিগঞ্জ</h3>
+                <p>আমাদের লক্ষ্য একটি আধুনিক সমৃদ্ধ ডিজিটাল প্লাটফর্মের মাধ্যমে মুন্সিগঞ্জ জেলার ইতিহাস, ঐতিহ্য ও সকল নাগরিক সেবা সবার দৌরগোড়ায় সহজে পৌঁছে দেওয়া।</p>
+            </div>
+            <div class="footer-links">
+                <h3>গুরুত্বপূর্ণ লিংক</h3>
+                <ul>
+                    <li><a href="index.html">হোম পেজ</a></li>
+                    <li><a href="news.html">সর্বশেষ সংবাদ</a></li>
+                    <li><a href="jobs.html">চাকরির খবর</a></li>
+                    <li><a href="rent.html">বাড়ি ও দোকান ভাড়া</a></li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <h3>আমাদের সাথে যুক্ত থাকুন</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="mt-2"><i class="fas fa-envelope"></i> info@munshiganj.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; ২০২৬ হাতের মুঠোয় মুন্সিগঞ্জ | সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
 
-/* Places */
-.place-card {
-    background: var(--card-light);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-.place-img { height: 160px; background-size: cover; background-position: center; background-color: #ddd; }
-.place-info { padding: 15px; }
-.place-info h3 { font-size: 16px; margin-bottom: 5px; }
-.place-info p { font-size: 13px; color: var(--text-muted); }
-
-/* Block & Lists Layout */
-.content-box, .sidebar-box, .info-block {
-    background: var(--card-light); padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-.stats-box { margin: 20px 0; }
-.stat-card { background: #f3f4f6; padding: 15px; border-radius: 6px; text-align: center; }
-body.dark-mode .stat-card { background: #374151; }
-.upazila-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-.upazila-list li { font-weight: 500; }
-.upazila-list i { color: var(--primary-color); margin-right: 5px; }
-
-.block-title { font-size: 20px; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
-.list-item { margin-bottom: 15px; }
-.list-item h4 { font-size: 16px; color: var(--primary-color); }
-.list-item p { font-size: 14px; color: var(--text-muted); }
-
-.action-buttons-flex { display: flex; gap: 10px; margin-top: 15px; }
-.btn-sm { padding: 6px 15px; border: none; border-radius: 4px; color: white; cursor: pointer; font-family: inherit; font-size: 14px; }
-.btn-outline { background: transparent; border: 1px solid var(--text-muted); color: inherit; }
-
-/* Utilities */
-.utility-card, .trans-card {
-    background: var(--card-light); padding: 20px; border-radius: 8px; text-align: center;
-}
-.trans-card i { font-size: 32px; color: var(--primary-color); margin-bottom: 10px; }
-
-/* Gallery */
-.gallery-container {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;
-}
-.gallery-item { height: 180px; overflow: hidden; border-radius: 8px; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-.gallery-item:hover img { transform: scale(1.05); }
-
-/* --- Footer --- */
-.main-footer {
-    background: #0f172a; color: #94a3b8; padding: 50px 0 20px; margin-top: 5px;
-}
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 30px; }
-@media(max-width:768px){ .footer-grid { grid-template-columns: 1fr; } }
-.footer-about h3, .footer-links h3, .footer-socials h3 { color: white; margin-bottom: 15px; font-size: 18px; }
-.footer-links ul { list-style: none; }
-.footer-links ul li { margin-bottom: 8px; }
-.footer-links ul li a:hover { color: white; }
-.social-icons a {
-    display: inline-block; width: 35px; height: 35px; background: #1e293b; color: white; line-height: 35px; text-align: center; border-radius: 50%; margin-right: 10px; transition: var(--transition);
-}
-.social-icons a:hover { background: var(--primary-color); }
-.footer-bottom { border-top: 1px solid #1e293b; padding-top: 20px; text-align: center; font-size: 14px; }
+    <script src="app.js"></script>
+</body>
+</html>
